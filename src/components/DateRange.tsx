@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { DateInput } from './DateInput'
+import { useData } from '../context/dataContext'
 
 export const DateRange = () => {
-  const [start, setStart] = useState('');
-  const [finish, setFinish] = useState('');
+  const { start, setStart, finish, setFinish } = useData();
 
   return (
     <form className='box flex' onSubmit={(e) => e.preventDefault()}>
@@ -13,7 +13,6 @@ export const DateRange = () => {
         onChange={({ target }) => setStart(target.value)} 
       />
 
-      {/* { start } */}
 
       <DateInput 
         label="finish" 
@@ -21,7 +20,6 @@ export const DateRange = () => {
         onChange={({ target }) => setFinish(target.value)}
       />
 
-      {/* { finish } */}
     </form>
   )
 }
