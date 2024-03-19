@@ -1,11 +1,39 @@
-import React from "react";
 import { useData } from "../context/dataContext";
 
 const Summary = () => {
   const { data } =  useData();
-  // console.log(data);
+  if (data === null) return null;
+
   return (
-    <div>summary</div>
+    <section>
+      <div className="summary flex mb">
+        <div className="box">
+          <h2>Sells</h2>
+          <span>
+            { data.reduce((acc, item) => acc + item.preco, 0).toLocaleString('eng', { style: 'currency', currency: "USD" }) }
+          </span>
+        </div>
+        <div className="box">
+          <h2>Received</h2>
+          <span>
+            { data.filter((i) => i.status === 'pago')
+              .reduce((acc, item) => acc + item.preco, 0)
+              .toLocaleString('eng', { style: 'currency', currency: "USD" }) }
+          </span>
+        </div>
+        <div className="box">
+          <h2>Processing</h2>
+          <span>
+            { data.filter((i) => i.status === 'processando')
+              .reduce((acc, item) => acc + item.preco, 0)
+              .toLocaleString('eng', { style: 'currency', currency: "USD" }) }
+          </span>
+        </div>
+      </div>
+      <div className="box">
+        Charts
+      </div>
+    </section>
   )
 }
 

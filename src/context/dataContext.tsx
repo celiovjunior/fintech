@@ -53,5 +53,5 @@ export const DataContextProvider = ({ children }: React.PropsWithChildren) => {
     <DataContext.Provider value={{ data, loading, error, start, setStart, finish, setFinish }}>
       { children } 
     </DataContext.Provider>
-  ) 
+  )
 }
