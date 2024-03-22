@@ -12,8 +12,6 @@ export const DateRange = () => {
         value={start} 
         onChange={({ target }) => setStart(target.value)} 
       />
-
-
       <DateInput 
         label="finish" 
         value={finish} 

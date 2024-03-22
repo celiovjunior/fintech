@@ -11,7 +11,7 @@ type InterfaceDataContext = {
   setFinish:  React.Dispatch<React.SetStateAction<string>>,
 }
 
-type InterfaceSell = {
+export type InterfaceSell = {
   id: string,
   nome: string,
   preco: number,

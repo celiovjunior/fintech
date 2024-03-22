@@ -30,7 +30,7 @@ const Summary = () => {
           </span>
         </div>
       </div>
-      <div className="box">
+      <div className="box mb">
         Charts
       </div>
     </section>
