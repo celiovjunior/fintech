@@ -6,6 +6,7 @@ import { useLocation } from 'react-router-dom';
 export const Header = () => {
   const [title, setTitle] = React.useState("Summary");
   const location = useLocation();
+
   React.useEffect(() => {
     if (location.pathname === "/") {
       setTitle('Summary');
