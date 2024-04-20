@@ -8,11 +8,9 @@ export const Sells = () => {
   if (data === null) return null;
   return (
     <ul>
-      {
-        data.map(sell => <li key={sell.id}>
+      { data.map(sell => <li key={sell.id}>
           <ItemSell sell={sell} />
-        </li>)
-      }
+        </li>) }
     </ul>
   )
 }
