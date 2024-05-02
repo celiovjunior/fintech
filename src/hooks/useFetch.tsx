@@ -6,7 +6,7 @@ interface FetchState<T> {
   error: string | null;
 }
 
-function useFetch<T>(
+function useFetch<T> (
   url: RequestInfo | URL,
   options?: RequestInit,
 ): FetchState<T> {
