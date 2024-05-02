@@ -3,7 +3,7 @@ import { Header } from './components/Header'
 import { SideNav } from './components/SideNav'
 import { DataContextProvider } from './context/dataContext'
 import './index.css'
-import { Sells } from './pages/Sells'
+import { Sales } from './pages/Sales'
 import Summary from './pages/Summary'
 import { Sell } from './pages/Sell'
 
@@ -17,7 +17,7 @@ function App() {
             <Header/>
             <Routes>
               <Route path="/" element={<Summary />} />
-              <Route path="/sales" element={<Sells />} />             
+              <Route path="/sales" element={<Sales />} />             
               <Route path="/sales/:id" element={<Sell />} />             
             </Routes>
           </main>

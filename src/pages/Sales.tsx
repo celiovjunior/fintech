@@ -2,7 +2,7 @@ import React from 'react'
 import { useData } from '../context/dataContext'
 import { ItemSell } from '../components/ItemSell';
 
-export const Sells = () => {
+export const Sales = () => {
   const { data } = useData();
 
   if (data === null) return null;

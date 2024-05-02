@@ -16,6 +16,7 @@ body {
 }
 
 .box {
+  position: relative;
   padding: var(--gap);
   border-radius: var(--gap);
   background: var(--color-white);
@@ -79,7 +80,6 @@ ul {
 }
 
 /* side nav */
-
 .sidenav li {
   display: flex;
   align-items: center;

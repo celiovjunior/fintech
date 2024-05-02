@@ -11,17 +11,17 @@ export const Header = () => {
     if (location.pathname === "/") {
       setTitle('Summary');
       document.title = "Fintech | Summary";
-    } else if (location.pathname === "/sells") {
-      setTitle('Sells');
+    } else if (location.pathname === "/sales") {
+      setTitle('Sales');
       document.title = "Fintech | Sales";
     }
-  }, [location])
+  }, [location]);
 
   return (
     <header className='mb'>
       <div className='daterange mb'>
         <DateRange />
-          <h1 className='flex box bg-3'>{title}</h1>
+        <h1 className='box bg-3'>{title}</h1>
       </div>
       <Months />
     </header>
