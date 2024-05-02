@@ -2,6 +2,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import useFetch from '../hooks/useFetch'
 import { InterfaceSell } from '../context/dataContext'
+import { Loading } from '../components/Loading';
 
 type SellWithoutDate = Omit<InterfaceSell, 'data'>;
 
@@ -10,6 +11,7 @@ export const Sell = () => {
   // console.log(id)
   const { data, loading } = useFetch<SellWithoutDate>(`https://data.origamid.dev/vendas/${id}`)
   
+  if(loading === true) return <Loading />
   if(data === null) return null
   
   return (
