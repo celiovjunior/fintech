@@ -17,7 +17,7 @@ export type InterfaceSell = {
   preco: number,
   status: "pago" | "processando" | "falha",
   pagamento: "boleto" | "pix" | "pix",
-  data: string,
+  date: string,
   parcelas:  number | null
 }
 
