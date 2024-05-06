@@ -1,6 +1,5 @@
-import React from 'react'
 import { InterfaceSell } from '../context/dataContext'
-import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
+import { Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 
 const chartData = [
   {
@@ -23,7 +22,27 @@ const chartData = [
   },
 ]
 
+type SaleDay = {
+  date: string,
+  pago: number,
+  processando: number,
+  falha: number
+}
+
+function transformData(data: InterfaceSell[]): SaleDay[] {
+
+  return [{
+    date: '2023-05-07',
+    pago: 42000,
+    processando: 5880,
+    falha: 8450
+  }]
+}
+
 export const SalesChart = ({ data }: { data:InterfaceSell[] }) => {
+  const transformDate = transformData(data);
+  console.log(transformDate)
+
   return (
     <ResponsiveContainer width={"99%"} height={400}>
       <LineChart data={chartData}>
