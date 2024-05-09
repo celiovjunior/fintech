@@ -9,7 +9,7 @@ const Summary = () => {
     <section>
       <div className="summary flex mb">
         <div className="box">
-          <h2>Sells</h2>
+          <h2>Sales</h2>
           <span>
             { data.reduce((acc, item) => acc + item.preco, 0).toLocaleString('eng', { style: 'currency', currency: "USD" }) }
           </span>
