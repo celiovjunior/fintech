@@ -19,7 +19,6 @@ const inputStyle: React.CSSProperties = {
   border: "none",
   fontFamily: "monospace",
   ...generalStyle,
-
 }
 
 type InterfaceDateInput = React.ComponentProps<'input'> & {
