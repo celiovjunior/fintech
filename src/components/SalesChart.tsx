@@ -25,7 +25,10 @@ function transformData(data: InterfaceSell[]): SaleDay[] {
     return acc;
   }, {});
 
-  return Object.values(days);
+  return Object.values(days).map((day) => ({
+    ...day,
+    data: day.data.substring(5)
+  }));
 }
 
 export const SalesChart = ({ data }: { data:InterfaceSell[] }) => {
