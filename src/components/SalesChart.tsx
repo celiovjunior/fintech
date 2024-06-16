@@ -9,7 +9,7 @@ type SaleDay = {
 }
 
 function transformData(data: InterfaceSell[]): SaleDay[] {
-  const days = data.reduce((acc: {[key: string]: SaleDay}, item) => {
+  const days = data.reduce((acc: {[ key: string ]: SaleDay}, item) => {
     const day = item.data.split(" ")[0];
 
     if (!acc[day]) {
