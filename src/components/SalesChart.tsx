@@ -1,51 +1,39 @@
 import { InterfaceSell } from '../context/dataContext'
 import { Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 
-const chartData = [
-  {
-    date: '2023-05-03',
-    pago: 30000,
-    processando: 3000,
-    falha: 2000
-  },
-  {
-    date: '2023-05-06',
-    pago: 38000,
-    processando: 5000,
-    falha: 6000
-  },
-  {
-    date: '2023-05-07',
-    pago: 42000,
-    processando: 5880,
-    falha: 8450
-  },
-]
-
 type SaleDay = {
-  date: string,
+  data: string,
   pago: number,
   processando: number,
   falha: number
 }
 
 function transformData(data: InterfaceSell[]): SaleDay[] {
+  const days = data.reduce((acc: {[key: string]: SaleDay}, item) => {
+    const day = item.data.split(" ")[0];
 
-  return [{
-    date: '2023-05-07',
-    pago: 42000,
-    processando: 5880,
-    falha: 8450
-  }]
+    if (!acc[day]) {
+      acc[day] = {
+        data: day,
+        pago: 0,
+        falha: 0,
+        processando: 0
+      }
+    }
+    
+    acc[day][item.status] += item.preco;
+    return acc;
+  }, {});
+
+  return Object.values(days);
 }
 
 export const SalesChart = ({ data }: { data:InterfaceSell[] }) => {
-  const transformDate = transformData(data);
-  console.log(transformDate)
+  const transformedDate = transformData(data);
 
   return (
     <ResponsiveContainer width={"99%"} height={400}>
-      <LineChart data={chartData}>
+      <LineChart data={transformedDate}>
         <XAxis dataKey="date" />
         <YAxis />
         <Tooltip />
