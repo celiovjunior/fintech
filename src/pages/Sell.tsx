@@ -18,7 +18,7 @@ export const Sell = () => {
     <div>
       <div className='box mb'>ID: {data.id}</div>
       <div className='box mb'>Name: {data.nome}</div>
-      <div className='box mb'>Price {data.preco.toLocaleString("en", {
+      <div className='box mb'>Price: {data.preco.toLocaleString("en", {
         style: "currency",
         currency: "USD",
       })}</div>
